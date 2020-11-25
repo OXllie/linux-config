@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EXCLUDE=('.git' '.gitignore' 'setup.sh' '.setup.sh.swp')
-LINKS=(`ls -A`)
+LINKS=($(ls -A))
 
 for i in ${!LINKS[@]}; do
 	[[ ${EXCLUDE[@]} =~ ${LINKS[$i]} ]] && unset LINKS[$i]
